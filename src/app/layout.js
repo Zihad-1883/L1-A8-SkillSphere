@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SkillSphere",
-  description: "Online Learning Platform",
+  title: "SkillSphere | Unlock Your Potential with Expert Courses",
+  description: "SkillSphere is a premium online learning platform offering curated courses from industry experts in web development, data science, design, and marketing.",
+  keywords: "online learning, courses, web development, data science, skill building, professional training",
 };
 
 export default function RootLayout({ children }) {

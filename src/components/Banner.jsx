@@ -4,45 +4,69 @@ import BannerImage from '../assets/banner.png'
 
 const Banner = () => {
     return (
-        <div className="w-full bg-gradient-to-br from-blue-50 to-pink-100 px-8 md:px-14 py-10 md:py-14">
-            <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
-        
-            <div className="flex-1">
-                <span className="inline-block bg-white/70 text-indigo-700 text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
-                    Online Learning
-                </span>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3 animate__animated animate__fadeInLeft text-3xl font-bold">
-                    Upgrade Your Skills Today{" "}
-                    <span className="text-pink-500">🚀</span>
-                </h1>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 max-w-md animate__animated animate__fadeInLeft animate__delay-1s">
-                        Learn from Industry Experts. Unlock your potential with our
-                        curated courses designed for modern professionals and lifelong
-                        learners.
+        <div className="relative w-full overflow-hidden bg-white/50 py-16 md:py-24">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-pink-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+            <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+                <div className="flex-1 space-y-8">
+                    <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full animate__animated animate__fadeInDown">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
+                        </span>
+                        New Courses Available
+                    </div>
+
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight animate__animated animate__fadeInLeft">
+                        Master Your Future <br />
+                        <span className="text-gradient">With Expertise</span>
+                    </h1>
+
+                    <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-xl animate__animated animate__fadeInLeft animate__delay-1s">
+                        Join 50k+ students learning world-class skills from industry experts. 
+                        Your journey to professional excellence starts here.
                     </p>
-                    <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-all duration-200 animate__animated animate__bounceIn animate__delay-2s">
-                    Start Learning Now
+
+                    <div className="flex flex-wrap items-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
+                        <button className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-xl shadow-indigo-100 transition-all hover:-translate-y-1 active:scale-95">
+                            Start Learning Now
                         </button>
-                <div className="flex gap-6 mt-6 flex-wrap">
-                    <div className="flex flex-col animate__animated animate__bounceIn animate__delay-3s">
-                    <span className="text-lg font-bold text-gray-900">200+</span>
-                    <span className="text-xs text-gray-500">Courses</span>
+                        <div className="flex -space-x-4">
+                            {[1, 2, 3, 4].map((i) => (
+                                <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden shadow-sm hover:scale-110 transition-transform cursor-pointer">
+                                    <div className={`w-full h-full flex items-center justify-center font-bold text-gray-400 bg-indigo-${i}00`}>U{i}</div>
+                                </div>
+                            ))}
+                            <div className="w-12 h-12 rounded-full border-4 border-white bg-gray-50 flex items-center justify-center text-xs font-bold text-gray-400 shadow-sm">
+                                +50k
+                            </div>
+                        </div>
                     </div>
-                    <div className="flex flex-col animate__animated animate__bounceIn animate__delay-4s">
-                    <span className="text-lg font-bold text-gray-900">50k+</span>
-                    <span className="text-xs text-gray-500">Students</span>
-                    </div>
-                    <div className="flex flex-col animate__animated animate__bounceIn animate__delay-5s">
-                    <span className="text-lg font-bold text-gray-900">4.9★</span>
-                    <span className="text-xs text-gray-500">Rating</span>
+
+                    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100 animate__animated animate__fadeIn animate__delay-2s">
+                        <div>
+                            <div className="text-3xl font-black text-gray-900">200+</div>
+                            <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Courses</div>
+                        </div>
+                        <div>
+                            <div className="text-3xl font-black text-gray-900">4.9★</div>
+                            <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Rating</div>
+                        </div>
+                        <div>
+                            <div className="text-3xl font-black text-gray-900">12k+</div>
+                            <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Graduates</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        <div className="w-full md:w-[320px] rounded-md overflow-hidden bg-white/50 flex items-center justify-center leading-tight mb-3 animate__animated animate__fadeInRight text-3xl font-bold">
-          <Image src={BannerImage} alt='BannerImage'></Image>
-        </div>
-
+                <div className="relative w-full md:w-1/2 lg:w-5/12 animate__animated animate__fadeInRight">
+                    <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500 to-pink-500 rounded-[2.5rem] blur-2xl opacity-20 -rotate-6 animate-pulse"></div>
+                    <div className="relative bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden transform hover:-rotate-2 transition-transform duration-500">
+                        <Image src={BannerImage} alt='BannerImage' className="rounded-[1.5rem] w-full h-auto object-cover shadow-inner" priority />
+                    </div>
+                </div>
             </div>
         </div>
     );

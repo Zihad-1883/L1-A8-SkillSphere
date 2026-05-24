@@ -1,4 +1,45 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
+
+@theme {
+  --color-primary-600: #6366f1;
+  --color-secondary-600: #ec4899;
+  --color-accent-600: #8b5cf6;
+}
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark {
+    --glass-bg: rgba(17, 24, 39, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #6366f1, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .bg-mesh {
+    background-color: #ffffff;
+    background-image: radial-gradient(at 0% 0%, #0f172a 0, transparent 50%),
+                      radial-gradient(at 50% 0%, #1e293b 0, transparent 50%);
+  }
+}
 

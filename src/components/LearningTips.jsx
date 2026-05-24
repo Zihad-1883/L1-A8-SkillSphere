@@ -1,73 +1,73 @@
 const LearningTips = () => {
+    const tips = [
+        {
+            icon: "⏱️",
+            title: "Pomodoro Technique",
+            desc: "Work in focused 25-minute intervals followed by 5-minute breaks to maintain peak productivity.",
+            bg: "bg-indigo-50",
+            border: "border-indigo-100",
+            text: "text-indigo-600"
+        },
+        {
+            icon: "📘",
+            title: "Active Recall",
+            desc: "Challenge yourself to remember concepts from memory instead of passive reading for better retention.",
+            bg: "bg-pink-50",
+            border: "border-pink-100",
+            text: "text-pink-600"
+        },
+        {
+            icon: "📈",
+            title: "Spaced Repetition",
+            desc: "Review material at increasing intervals to move information into long-term memory permanently.",
+            bg: "bg-violet-50",
+            border: "border-violet-100",
+            text: "text-violet-600"
+        },
+        {
+            icon: "📅",
+            title: "Focused Habits",
+            desc: "Dedicate consistent time slots each day for learning to build an unshakeable study routine.",
+            bg: "bg-amber-50",
+            border: "border-amber-100",
+            text: "text-amber-600"
+        }
+    ];
+
     return (
-        <div className="py-16 px-4">
-            <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Learning Tips</h2>
-                <p className="text-gray-500 text-sm">
-                    Optimize your study routine with these proven techniques.
-                </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                <div className="bg-orange-50 rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span className="text-3xl mb-4 block">⏱️</span>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
-                            The Pomodoro Technique
-                        </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                            Boost your focus and prevent burnout. Work in focused 25-minute
-                            intervals, followed by a short 5-minute break. This structured
-                            approach helps maintain high cognitive function during learning
-                            sessions.
-                        </p>
-                    </div>
-                    <button className="mt-6 text-orange-500 font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
-                        Learn More →
-                    </button>
-                </div>
-
-                <div className="flex flex-col gap-4">
-                    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex-1">
-                        <span className="text-2xl mb-3 block">📘</span>
-                        <h3 className="text-base font-bold text-gray-900 mb-2">
-                            Active Recall
-                        </h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">
-                            Test yourself frequently rather than passively re-reading notes
-                            to strengthen memory retention.
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex-1 flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-xl shrink-0">
-                            📈
-                        </div>
-                        <div>
-                            <h3 className="text-base font-bold text-gray-900 mb-1">
-                                Spaced Repetition
-                            </h3>
-                            <p className="text-sm text-gray-500 leading-relaxed">
-                                Review material at gradually increasing intervals. This
-                                leverages the psychological spacing effect to embed knowledge
-                                into long-term memory efficiently.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-blue-100 rounded-2xl p-6 border border-blue-200 shadow-sm">
-                    <span className="text-2xl mb-3 block">📅</span>
-                    <h3 className="text-base font-bold text-gray-900 mb-2">
-                        Consistent Scheduling
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                        Dedicate specific blocks of time each week solely for upskilling
-                        to build a lasting habit.
+        <div className="py-24 px-6 bg-white">
+            <div className="container mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <span className="text-indigo-600 font-bold bg-indigo-50 px-4 py-2 rounded-full text-xs uppercase tracking-widest mb-6 inline-block">
+                        Pro Learning Secrets
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+                        Boost Your <span className="text-gradient">Learning Speed</span>
+                    </h2>
+                    <p className="text-lg text-gray-500">
+                        Scientific techniques designed to help you master complex skills faster and retain them longer.
                     </p>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {tips.map((tip, i) => (
+                        <div key={i} className={`p-8 rounded-[2.5rem] border ${tip.border} ${tip.bg} transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default group`}>
+                            <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-3xl mb-8 group-hover:rotate-12 transition-transform">
+                                {tip.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">{tip.title}</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                {tip.desc}
+                            </p>
+                            <div className={`text-sm font-bold ${tip.text} flex items-center gap-2 cursor-pointer hover:underline`}>
+                                Explore method
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
