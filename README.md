@@ -14,7 +14,6 @@ SkillSphere is a modern online learning platform where users can explore courses
 🔗 [https://zihad-assignment-8.vercel.app](https://zihad-assignment-8.vercel.app)
 
 ## Key Features
-
 - 🏠 **Home Page** — Hero banner, Popular Courses, Learning Tips, Top Instructors, Trending Courses sections
 - 📚 **All Courses Page** — Browse all available courses with search functionality
 - 🔍 **Course Details Page** — Full course info, curriculum, instructor details (Protected Route)
@@ -27,27 +26,59 @@ SkillSphere is a modern online learning platform where users can explore courses
 - ❌ **404 Page** — Custom not-found page
 
 ## Tech Stack
-
-- **Framework** — Next.js 16 (App Router)
-- **Styling** — Tailwind CSS + DaisyUI
-- **UI Components** — HeroUI
-- **Authentication** — BetterAuth
-- **Database** — MongoDB Atlas
-- **Deployment** — Vercel
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS + DaisyUI |
+| UI Components | HeroUI |
+| Authentication | BetterAuth |
+| Database | MongoDB Atlas |
+| Deployment | Vercel |
 
 ## NPM Packages Used
-
 | Package | Purpose |
-|--------|---------|
-| `next` | React framework with App Router |
-| `react` | UI library |
-| `tailwindcss` | Utility-first CSS framework |
-| `daisyui` | Tailwind component library |
-| `@heroui/react` | UI component library |
-| `better-auth` | Authentication library |
-| `mongodb` | MongoDB driver for database |
-| `react-hot-toast` | Toast notifications |
-| `react-icons` | Icon library |
-| `animate.css` | CSS animation library |
-| `@gravity-ui/icons` | Icon set |
+|---------|---------|
+| next | React framework with App Router |
+| react | UI library |
+| tailwindcss | Utility-first CSS framework |
+| daisyui | Tailwind component library |
+| @heroui/react | UI component library |
+| better-auth | Authentication library |
+| mongodb | MongoDB driver for database |
+| react-hot-toast | Toast notifications |
+| react-icons | Icon library |
+| animate.css | CSS animation library |
+| @gravity-ui/icons | Icon set |
 
+## How to Run Locally
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/Zihad-1883/your-skillsphere-repo.git
+cd your-skillsphere-repo
+```
+
+**2. Install dependencies**
+```bash
+npm install
+```
+
+**3. Create a `.env` file in the root directory**
+```env
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_SECRET=your_secret_key
+MONGODB_URI=your_mongodb_connection_string
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+**4. Start the development server**
+```bash
+npm run dev
+```
+
+**5. The app will run at**
+```
+http://localhost:3000
+```
